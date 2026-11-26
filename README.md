@@ -92,3 +92,29 @@ plot_tree(
 plt.title("Decision Tree Classifier - Iris Dataset") 
 
 plt.show()
+
+
+|DAV PRACTICALS|
+•PRAC-01
+
+import pandas as pd
+import numpy as np
+
+data = pd.read_csv('C:\\Users\\Admin\\Documents\\Book1.csv')
+print(data)
+
+for i in data.columns:
+    if i != 'student_name':
+        mean = np.mean(data[i])
+        median = np.median(data[i])
+        std = np.std(data[i])
+
+        print(f'''For subject '{i}'
+            mean = {mean}
+            median={median}
+            std_dev = {std}''')
+
+print('Students who scored above average in FML')
+print(data['student_name'][data['fml']>=np.mean(data['fml'])])
+
+
